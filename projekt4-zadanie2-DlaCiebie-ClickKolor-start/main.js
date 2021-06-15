@@ -5,18 +5,13 @@
 // jeśli jeden z kolorów jest parzysty a drugi nieparzysty to kolor zielony
 
 document.addEventListener("DOMContentLoaded", () => {
-  const body = document.querySelector("body");
-
-  body.addEventListener("click", (e) => {
-    let x = e.clientX;
-    let y = e.clientY;
-    console.log(x, y);
-    if (x % 2 === 0 && y % 2 === 0) {
-      body.style.backgroundColor = "red";
-    } else if (x % 2 === 1 && y % 2 === 1) {
-      body.style.backgroundColor = "blue";
+  document.body.addEventListener("click", (e) => {
+    if (e.clientX % 2 === 0 && e.clientY % 2 === 0) {
+      document.body.style.backgroundColor = "red";
+    } else if (e.clientX % 2 === 1 && e.clientY % 2 === 1) {
+      document.body.style.backgroundColor = "green";
     } else {
-      body.style.backgroundColor = "orange";
+      document.body.style.backgroundColor = "blue";
     }
   });
 });
